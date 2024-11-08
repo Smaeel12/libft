@@ -27,8 +27,9 @@ static void	putnbr_to_buffer(unsigned int n, int fd)
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	num;
-	
-	if (!n) {
+
+	if (!n)
+	{
 		write(fd, "0", 1);
 		return ;
 	}
