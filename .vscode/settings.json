@@ -6,7 +6,8 @@
         "stddef.h": "c",
         "sstream": "c",
         "stdio.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "fcntl.h": "c"
     },
     "editor.fontSize": 12
 }

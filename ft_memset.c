@@ -6,7 +6,7 @@
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 21:24:22 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/10/28 21:24:24 by iboubkri         ###   ########.fr       */
+/*   Updated: 2024/11/01 14:58:08 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t i = 0;
+	size_t	i;
 
+	i = 0;
 	while (i < len)
 	{
 		((unsigned char *)b)[i] = (unsigned char)c;

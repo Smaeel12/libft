@@ -6,11 +6,11 @@
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:24:39 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/10/29 19:57:00 by iboubkri         ###   ########.fr       */
+/*   Updated: 2024/11/01 10:00:07 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 13:24:46 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/11/07 14:27:10 by iboubkri         ###   ########.fr       */
+/*   Created: 2024/11/07 19:55:08 by iboubkri          #+#    #+#             */
+/*   Updated: 2024/11/07 20:57:09 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static void	putnbr_to_buffer(unsigned int n, int fd)
 {
-	size_t	len;
+	char	c;
 
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	if (!s1)
-		return (NULL);
-	len = ft_strlen(s1);
-	while (ft_strchr(set, s1[len - 1]))
-		len--;
-	return (ft_substr(s1, 0, len));
+	if (!n)
+		return ;
+	c = (n % 10) + '0';
+	putnbr_to_buffer(n / 10, fd);
+	write(fd, &c, 1);
+	return ;
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	unsigned int	num;
+	
+	if (!n) {
+		write(fd, "0", 1);
+		return ;
+	}
+	else if (n < 0)
+	{
+		write(fd, "-", 1);
+		num = -n;
+	}
+	else
+		num = n;
+	putnbr_to_buffer(num, fd);
 }

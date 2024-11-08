@@ -6,11 +6,11 @@
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:24:26 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/10/29 19:56:15 by iboubkri         ###   ########.fr       */
+/*   Updated: 2024/11/01 10:00:00 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isascii(int c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

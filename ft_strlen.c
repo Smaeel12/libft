@@ -6,7 +6,7 @@
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:24:35 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/10/28 16:34:24 by iboubkri         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:16:38 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t len = 0;
+	size_t	len;
 
-	while (s[len])
+	len = 0;
+	while (s && s[len])
 		len++;
 	return (len);
 }

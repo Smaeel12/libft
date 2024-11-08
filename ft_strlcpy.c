@@ -6,7 +6,7 @@
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 21:24:19 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/10/30 14:36:59 by iboubkri         ###   ########.fr       */
+/*   Updated: 2024/11/06 13:54:38 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	srclen = ft_strlen(src);
+	if (!dstsize || !src || !dst)
+		return (srclen);
 	while (i < srclen && i < dstsize - 1)
 	{
 		dst[i] = src[i];

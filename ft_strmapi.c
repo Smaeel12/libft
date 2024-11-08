@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 13:24:46 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/11/07 14:27:10 by iboubkri         ###   ########.fr       */
+/*   Created: 2024/11/07 19:13:26 by iboubkri          #+#    #+#             */
+/*   Updated: 2024/11/07 19:29:40 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len;
+	size_t	slen;
+	char	*new;
 
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	if (!s1)
-		return (NULL);
-	len = ft_strlen(s1);
-	while (ft_strchr(set, s1[len - 1]))
-		len--;
-	return (ft_substr(s1, 0, len));
+	slen = ft_strlen(s);
+	new = (char *)malloc(slen * sizeof(char));
+	while (slen--)
+	{
+		new[slen] = f(slen, s[slen]);
+	}
+	return (new);
 }
