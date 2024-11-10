@@ -6,7 +6,7 @@
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 13:24:46 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/11/07 14:27:10 by iboubkri         ###   ########.fr       */
+/*   Updated: 2024/11/08 22:05:08 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 
-	while (*s1 && ft_strchr(set, *s1))
+	while (s1 && *s1 && ft_strchr(set, *s1))
 		s1++;
 	if (!s1)
 		return (NULL);

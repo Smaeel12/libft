@@ -6,7 +6,7 @@
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 10:06:48 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/11/08 20:26:01 by iboubkri         ###   ########.fr       */
+/*   Updated: 2024/11/08 20:58:57 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_itoa(int n)
 
 	len = (n <= 0) + count_len(n);
 	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	num = n * ((n < 0) * -1 | 1);
 	ft_memset(str, '0', len + 1);
 	str[len--] = '\0';

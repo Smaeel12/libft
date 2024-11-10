@@ -6,7 +6,7 @@
 /*   By: iboubkri <iboubkri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 19:13:26 by iboubkri          #+#    #+#             */
-/*   Updated: 2024/11/08 20:45:57 by iboubkri         ###   ########.fr       */
+/*   Updated: 2024/11/08 20:49:05 by iboubkri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s)
 		return (NULL);
-	slen = strlen(s);
+	slen = ft_strlen(s);
 	new = (char *)malloc((slen + 1) * sizeof(char));
 	if (!new)
 		return (NULL);
