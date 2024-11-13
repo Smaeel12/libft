@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (dst && src && dst < src)
+	if (dst < src)
 	{
 		while (i < len)
 		{
@@ -27,7 +27,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (dst && src && len)
+		while (len)
 		{
 			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len - 1];
 			len--;

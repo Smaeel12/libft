@@ -24,7 +24,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!new)
 		return (NULL);
 	new[slen] = '\0';
-	while (slen--)
+	while (f && slen--)
 	{
 		new[slen] = f(slen, s[slen]);
 	}

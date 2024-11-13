@@ -21,11 +21,11 @@ int	ft_atoi(const char *str)
 	i = 0;
 	res = 0;
 	sign = 1;
-	while (str && ((str[i] >= 9 && str[i] <= 13) || str[i] == ' '))
+	while (((str[i] >= 9 && str[i] <= 13) || str[i] == ' '))
 		i++;
-	if (str && (str[i] == '-' || str[i] == '+'))
+	if ((str[i] == '-' || str[i] == '+'))
 		sign = (44 - str[i++]);
-	while (str && str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res *= 10;
 		res += str[i] - '0';

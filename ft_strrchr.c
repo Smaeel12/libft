@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	addr = NULL;
 	slen = ft_strlen(s);
-	while (s && i < slen + 1)
+	while (i < slen + 1)
 	{
 		if (s[i] == (char)c)
 			addr = (char *)&s[i];
