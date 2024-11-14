@@ -70,6 +70,8 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 	size_t	num;
 
+	if (!s)
+		return NULL;
 	num = count_words(s, c) + 1;
 	arr = (char **)malloc(num * sizeof(char *));
 	if (!arr)
