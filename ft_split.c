@@ -23,7 +23,7 @@ static size_t	count_words(char const *s, char c)
 	slen = ft_strlen(s);
 	while (i < slen + 1)
 	{
-		if ((s[i] == c || !s[i]) && (s[i - 1] && s[i - 1] != c))
+		if ((s[i] == c || !s[i]) && (i > 0 && s[i - 1] && s[i - 1] != c))
 			count++;
 		i++;
 	}
@@ -36,7 +36,11 @@ static void	free_all(char **arr)
 
 	i = 0;
 	while (arr[i])
+	{
 		free(arr[i]);
+		arr[i] = NULL;
+		i++;
+	}
 	free(arr);
 }
 
@@ -77,11 +81,9 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	num = count_words(s, c) + 1;
-	arr = (char **)malloc(num * sizeof(char *));
+	arr = malloc(num * sizeof(char *));
 	if (!arr)
 		return (NULL);
 	fill_array(arr, s, c);
-	if (arr)
-		return (arr);
-	return (NULL);
+	return (arr);
 }
